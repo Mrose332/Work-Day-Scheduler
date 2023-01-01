@@ -36,5 +36,10 @@ THEN the saved events persist
 
 The project was uploaded to GitHub at the following repository:  
 
+https://mrose332.github.io/Work-Day-Scheduler/
+
 You can access the deployed application with the GitHub Pages link: 
+
+https://github.com/Mrose332/Work-Day-Scheduler.git
+
   
