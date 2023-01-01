@@ -1,5 +1,8 @@
 # Work Day Scheduler
 
+## Description
+A work day scheduler to schedule events and save in local storage
+
 ## User Story
 
 ```md
