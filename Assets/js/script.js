@@ -23,3 +23,10 @@ $(document).ready(function() {
         timeKey = $(this).parent().attr('id');
         localStorage.setItem(timeKey, userEntry);
       })})
+
+      function TimeTracker() {
+       
+        let currentHour = moment().hour();
+        $(".time-block").each(function () {
+            let timeHour = parseInt($(this).attr("id").split("hour")[1]);
+            console.log( timeHour, currentHour)
