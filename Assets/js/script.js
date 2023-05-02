@@ -1,43 +1,59 @@
-$("#currentDay").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss"));
-
-let updateTime = setInterval(function () {
-    let currentTime = moment().format("dddd, MMMM Do YYYY, h:mm:ss")
-    $("#currentDay").text(currentTime)
-}, 1000);
-
-
-$('#hour-9 .description').val(localStorage.getItem('hour-9'));
-$('#hour-10 .description').val(localStorage.getItem('hour-10'));
-$('#hour-11 .description').val(localStorage.getItem('hour-11'));
-$('#hour-12 .description').val(localStorage.getItem('hour-12'));
-$('#hour-13 .description').val(localStorage.getItem('hour-13'));
-$('#hour-14 .description').val(localStorage.getItem('hour-14'));
-$('#hour-15 .description').val(localStorage.getItem('hour-15'));
-$('#hour-16 .description').val(localStorage.getItem('hour-16'));
-$('#hour-17 .description').val(localStorage.getItem('hour-17'));
-
 $(document).ready(function() {
 
       $('.saveBtn').on('click', function() {
         userEntry = $(this).siblings('.description').val();
         timeKey = $(this).parent().attr('id');
         localStorage.setItem(timeKey, userEntry);
-      })})
+      }) 
+    })
+     
 
-      function TimeTracker() {
-       
-        let currentHour = moment().hour();
-        $(".time-block").each(function () {
-            let timeHour = parseInt($(this).attr("id").split("hour")[1]);
-            console.log( timeHour, currentHour)
+      $("#hour9 .description").val(localStorage.getItem("hour9"));
+      $("#hour10 .description").val(localStorage.getItem("hour10"));
+      $("#hour11 .description").val(localStorage.getItem("hour11"));
+      $("#hour12 .description").val(localStorage.getItem("hour12"));
+      $("#hour13 .description").val(localStorage.getItem("hour13"));
+      $("#hour14 .description").val(localStorage.getItem("hour14"));
+      $("#hour15 .description").val(localStorage.getItem("hour15"));
+      $("#hour16 .description").val(localStorage.getItem("hour16"));
+      $("#hour17 .description").val(localStorage.getItem("hour17"));
 
-             if (timeHour < currentHour) {
-              $(this).addClass("past");
-              $(this).removeClass("future");
-              $(this).removeClass("present");
 
-              else if (timeHour === currentHour) {
-                $(this).removeClass("past");
-                $(this).addClass("present");
-                $(this).removeClass("future");
-            }
+function timeStamp() {
+    
+  const currentDate = dayjs().format('MMM D, YYYY');
+  const currentTime = dayjs().format('hh:mm:ss a');
+$('#currentDate').text(currentDate);
+$('#currentTime').text(currentTime);
+
+}
+function hourTracker () {
+      
+  var currentTime = dayjs().hour();
+  console.log(currentTime);
+  
+  
+  
+  $('.time-block').each(function() {
+    
+    let blockTime = parseInt($(this).attr('id').split("hour-")[1])
+    console.log(timeId);
+    
+    if (blockTime < currentTime) {
+      $(this).removeClass('future');
+      $(this).removeClass('present');
+      $(this).addClass('past');
+    }
+    else if (blockTime === currentTime) {
+      
+      $(this).removeClass('past');
+      $(this).removeClass('future');
+      $(this).addClass('present');  
+    }
+    else {
+      $(this).removeClass('present');
+      $(this).removeClass('future');
+      $(this).addClass('future');  
+    }
+  })
+}
