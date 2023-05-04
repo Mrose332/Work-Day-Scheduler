@@ -30,7 +30,7 @@ THEN the saved events persist
 ```
 
 ## Usage
-<img src="Assets/images/screenshot3.jpeg">
+<img src="Assets/images/screenshot.png">
 
 ## Installation
 
