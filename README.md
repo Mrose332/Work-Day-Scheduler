@@ -41,3 +41,6 @@ https://github.com/Mrose332/Work-Day-Scheduler.git
 You can access the deployed application with the GitHub Pages link: 
 
 https://mrose332.github.io/Work-Day-Scheduler/
+
+# Resources
+MSU bootcamp module 5 activities in GitLab
