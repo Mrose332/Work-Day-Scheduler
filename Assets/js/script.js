@@ -12,8 +12,8 @@ $(document).ready(function() {
 
 
 $(".saveBtn").on("click", function () {
-  var id = $(this).parent().attr("id");
-  var data = $(this).siblings(".description").val();
+  let id = $(this).parent().attr("id");
+  let data = $(this).siblings(".description").val();
   localStorage.setItem(id, data);
 });
 
